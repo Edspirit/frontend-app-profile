@@ -1,3 +1,16 @@
+@import "./fonts";
+
+.lang_fa {
+  * {
+    font-family: IRANSans,FontAwesome !important ;
+  }
+}
+.lang_ar {
+  * {
+    font-family: "Noto Sans Arabic", FontAwesome !important ;
+  }
+}
+
 .word-break-all {
   word-break: break-all !important;
 }

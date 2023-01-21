@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { sendTrackingLogEvent } from '@edx/frontend-platform/analytics';
 import { ensureConfig, getConfig } from '@edx/frontend-platform';
 import { AppContext } from '@edx/frontend-platform/react';
-import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
+import { getLocale, injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { StatusAlert, Hyperlink } from '@edx/paragon';
 
 // Actions
@@ -116,6 +116,17 @@ class ProfilePage extends React.Component {
   handleChange(name, value) {
     this.props.updateDraft(name, value);
   }
+
+  setFont = () => {
+    const body = document.querySelector('body');
+    if (getLocale() === 'fa') {
+      body.className = 'lang_fa';
+    } else if (getLocale() === 'ar') {
+      body.className = 'lang_ar';
+    } else {
+      body.removeAttribute('class');
+    }
+  };
 
   // Inserted into the DOM in two places (for responsive layout)
   renderViewMyRecordsButton() {
@@ -290,6 +301,7 @@ class ProfilePage extends React.Component {
   }
 
   render() {
+    this.setFont();
     return (
       <div className="profile-page">
         <Banner />
