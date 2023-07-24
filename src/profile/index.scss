@@ -1,3 +1,22 @@
+.lang_fa {
+  * {
+    font-family: IRANSans,FontAwesome !important ;
+  }
+}
+.lang_ar {
+  * {
+    font-family: "Noto Sans Arabic", FontAwesome !important ;
+  }
+}
+
+body #root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main{
+    flex-grow: 1;
+  }
+}
 .word-break-all {
   word-break: break-all !important;
 }
