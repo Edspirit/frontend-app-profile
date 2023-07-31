@@ -1,5 +1,5 @@
 {
-  "profile.page.title": "Profile | {siteName}",
+  "profile.page.title": "Perfil | {siteName}",
   "profile.age.details": "Para compartir el perfil con otros {siteName} estudiantes, debe confirmar que es mayor de 13 años.",
   "profile.age.set.date": "Establece tu fecha de nacimiento",
   "profile.datejoined.member.since": "Miembro desde {year}",
@@ -34,6 +34,11 @@
   "profile.formcontrols.button.saved": "Guardado",
   "profile.visibility.who.just.me": "Solo yo",
   "profile.visibility.who.everyone": "Todos en {siteName}",
+  "profile.learningGoal.learningGoal": "Objetivo de aprendizaje",
+  "profile.learningGoal.options.start_career": "quiero empezar mi carrera",
+  "profile.learningGoal.options.advance_career": "Quiero avanzar en mi carrera",
+  "profile.learningGoal.options.learn_something_new": "quiero aprender algo nuevo",
+  "profile.learningGoal.options.something_else": "Algo más",
   "profile.name.full.name": "Nombre completo",
   "profile.name.details": "Este es el nombre que aparecerá en tu cuenta y en tus certificados.",
   "profile.name.empty": "Añade nombre",
