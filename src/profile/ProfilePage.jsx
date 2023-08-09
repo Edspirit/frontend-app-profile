@@ -92,6 +92,17 @@ class ProfilePage extends React.Component {
     this.props.updateDraft(name, value);
   }
 
+  handleFont = () => {
+    const body = document.querySelector('body');
+    if (this.context.locale === 'fa') {
+      body.className = 'lang_fa';
+    } else if (this.context.locale === 'ar') {
+      body.className = 'lang_ar';
+    } else {
+      body.removeAttribute('class');
+    }
+  };
+
   getRecordsUrl(context) {
     let recordsUrl = null;
 
@@ -290,6 +301,7 @@ class ProfilePage extends React.Component {
   }
 
   render() {
+    this.handleFont();
     return (
       <div className="profile-page">
         <Banner />
