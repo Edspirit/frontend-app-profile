@@ -94,7 +94,7 @@ class ProfilePage extends React.Component {
 
   handleFont = () => {
     const body = document.querySelector('body');
-    if (this.context.locale === 'fa') {
+    if (this.context.locale === 'fa' || this.context.locale === 'fa-ir') {
       body.className = 'lang_fa';
     } else if (this.context.locale === 'ar') {
       body.className = 'lang_ar';
