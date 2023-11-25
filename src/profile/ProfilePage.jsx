@@ -93,17 +93,6 @@ class ProfilePage extends React.Component {
     this.props.updateDraft(name, value);
   }
 
-  handleFont = () => {
-    const body = document.querySelector('body');
-    if (this.context.locale === 'fa' || this.context.locale === 'fa-ir') {
-      body.className = 'lang_fa';
-    } else if (this.context.locale === 'ar') {
-      body.className = 'lang_ar';
-    } else {
-      body.removeAttribute('class');
-    }
-  };
-
   isYOBDisabled() {
     const { yearOfBirth } = this.props;
     const currentYear = new Date().getFullYear();
@@ -325,7 +314,6 @@ class ProfilePage extends React.Component {
   }
 
   render() {
-    this.handleFont();
     return (
       <div className="profile-page">
         <Banner />
