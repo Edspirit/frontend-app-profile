@@ -14,7 +14,7 @@ import faIRMessages from './messages/fa.json';
 
 const messages = {
   ar: arMessages,
-  fa: faIRMessages,
+  'fa-ir': faIRMessages,
   'es-419': es419Messages,
   fr: frMessages,
   'zh-cn': zhcnMessages,
