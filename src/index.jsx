@@ -19,6 +19,9 @@ import ReactDOM from 'react-dom';
 import Header, { messages as headerMessages } from '@edx/frontend-component-header';
 import Footer, { messages as footerMessages } from '@edx/frontend-component-footer';
 
+import { QueryClient, QueryClientProvider } from 'react-query';
+import REACT_QUERY_CONSTANTS from './constants/react-query-constants';
+
 import appMessages from './i18n';
 import configureStore from './data/configureStore';
 
@@ -28,14 +31,22 @@ import Head from './head/Head';
 import AppRoutes from './routes/AppRoutes';
 
 subscribe(APP_READY, () => {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      ...REACT_QUERY_CONSTANTS,
+    },
+  });
+
   ReactDOM.render(
     <AppProvider store={configureStore()}>
-      <Head />
-      <Header />
-      <main>
-        <AppRoutes />
-      </main>
-      <Footer />
+      <QueryClientProvider client={queryClient}>
+        <Head />
+        <Header />
+        <main>
+          <AppRoutes />
+        </main>
+        <Footer />
+      </QueryClientProvider>
     </AppProvider>,
     document.getElementById('root'),
   );
