@@ -23,15 +23,13 @@ import messages from './i18n';
 import configureStore from './data/configureStore';
 
 import './index.scss';
-import Head from './head/Head';
 
 import AppRoutes from './routes/AppRoutes';
 
 subscribe(APP_READY, () => {
   ReactDOM.render(
     <AppProvider store={configureStore()}>
-      <Head />
-      <Header />
+      <Header mfeTitle="profile.page.title" />
       <main id="main">
         <AppRoutes />
       </main>
