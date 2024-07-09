@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
-import { getConfig } from '@edx/frontend-platform';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash, faEye } from '@fortawesome/free-regular-svg-icons';
 
 import messages from './Visibility.messages';
+import useGetConfig from '../../../hooks/useGetConfig';
 
 const Visibility = ({ to, intl }) => {
+  const { platformName } = useGetConfig();
+
   const icon = to === 'private' ? faEyeSlash : faEye;
   const label = to === 'private'
     ? intl.formatMessage(messages['profile.visibility.who.just.me'])
-    : intl.formatMessage(messages['profile.visibility.who.everyone'], { siteName: getConfig().SITE_NAME });
+    : intl.formatMessage(messages['profile.visibility.who.everyone'], { siteName: platformName });
 
   return (
     <span className="ml-auto small text-muted">
@@ -33,6 +35,7 @@ Visibility.defaultProps = {
 const VisibilitySelect = ({ intl, className, ...props }) => {
   const { value } = props;
   const icon = value === 'private' ? faEyeSlash : faEye;
+  const { platformName } = useGetConfig();
 
   return (
     <span className={className}>
@@ -44,7 +47,7 @@ const VisibilitySelect = ({ intl, className, ...props }) => {
           {intl.formatMessage(messages['profile.visibility.who.just.me'])}
         </option>
         <option key="all_users" value="all_users">
-          {intl.formatMessage(messages['profile.visibility.who.everyone'], { siteName: getConfig().SITE_NAME })}
+          {intl.formatMessage(messages['profile.visibility.who.everyone'], { siteName: platformName })}
         </option>
       </select>
     </span>
